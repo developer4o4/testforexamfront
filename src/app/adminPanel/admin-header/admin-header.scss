@@ -1,0 +1,135 @@
+marquee {
+  background-color: #1ad079;
+  color: #fff;
+  height: 40px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+}
+
+#admin-header {
+  background-color: #fff;
+  box-shadow: 0 0 15px #cfcfcf47;
+  position: relative;
+  z-index: 1;
+  .admin-header-inner {
+    // max-width: 1366px;
+    height: 90px;
+    // margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    .logo {
+      font-size: 30px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 140px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        color: #000;
+        letter-spacing: 1px;
+      }
+
+      span {
+        color: #00b40c;
+      }
+    }
+
+    .menus {
+      display: flex;
+      gap: 15px;
+
+      .menu {
+        position: relative;
+        padding: 10px 0;
+
+        a:hover {
+          color: #f26225;
+        }
+
+        .box {
+          z-index: -1;
+          opacity: 0;
+          transform: translateX(-50%) translateY(10px);
+          left: 50%;
+          max-width: 300px;
+          min-width: 200px;
+          position: absolute;
+          top: 100%;
+          background-color: #f26225;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          pointer-events: none;
+          padding: 10px 0;
+          border-radius: 8px;
+          row-gap: 2px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #f26225; // asosiy rangga mos bo‘lsin
+          }
+
+          a {
+            border-radius: 7px;
+            padding: 10px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            width: 90%;
+
+            &:hover {
+              background-color: #ffffff5b;
+              // text-decoration: underline;
+            }
+          }
+        }
+
+        &:hover .box {
+          opacity: 1;
+          transform: translate(-50%, 0);
+          pointer-events: auto;
+          z-index: 1;
+        }
+
+        a {
+          color: #000;
+
+          &.act {
+            color: #1ad079;
+          }
+        }
+      }
+    }
+
+    .admin-name {
+      button {
+        color: red;
+        font-size: 16px;
+        border: 2px solid red;
+        border-radius: 5px;
+        background-color: transparent;
+        padding: 7px 15px;
+        cursor: pointer;
+        &:hover {
+          background-color: red;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

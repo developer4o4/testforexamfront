@@ -1,0 +1,258 @@
+.all-teachers {
+  padding: 20px;
+  min-height: 100vh;
+
+  .edit-form-shape {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0000004f;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+  }
+  .edit-form {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+    background-color: #fff;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 400px;
+    padding: 20px;
+
+    .input-row {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row-reverse;
+
+      span {
+        color: red;
+        font-size: 15px;
+      }
+
+      &.w-100 {
+        width: 100%;
+      }
+
+      input,
+      select,
+      textarea {
+        font-size: 16px;
+        width: 100%;
+        height: 50px;
+        padding: 0 10px;
+        border-radius: 15px;
+        border: 2px solid #f26225;
+        background-color: #fff !important;
+
+        &:is(textarea) {
+          resize: none;
+          height: 150px;
+          padding-top: 10px;
+        }
+
+        &:is(select) {
+          &.disabled {
+            color: #868686;
+          }
+
+          option {
+            color: #000 !important;
+          }
+        }
+      }
+
+      &.register-submit-button {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        button {
+          border-radius: 12px;
+          padding: 8px 20px;
+          background-color: #f26225;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          border: none;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .teachers-list {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .teacher-item {
+    border-bottom: 1px solid #eee;
+
+    .teacher-permissions {
+      margin-top: 5px;
+      display: flex;
+      justify-content: center;
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      button {
+        padding: 0;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .teacher-item:last-child {
+    border-bottom: none;
+  }
+
+  .teacher-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .teacher-header:hover {
+    background-color: #f0f0f0;
+  }
+
+  .teacher-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .teacher-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .teacher-username {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .arrow {
+    transition: transform 0.3s;
+    font-size: 12px;
+  }
+
+  .arrow.expanded {
+    transform: rotate(180deg);
+  }
+
+  .classes-container {
+    background-color: #fff;
+    padding: 0 16px;
+    max-height: 300px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+  }
+
+  .classes-list {
+    padding: 10px 0;
+  }
+
+  .class-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+  }
+
+  .class-item:last-child {
+    border-bottom: none;
+  }
+
+  .class-name {
+    font-weight: 500;
+  }
+
+  .students-count {
+    color: #666;
+    font-size: 14px;
+  }
+
+  .no-classes {
+    padding: 16px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+  }
+
+  .loading,
+  .error {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .error {
+    color: #d32f2f;
+  }
+
+  .teacher-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &[role="switch"] {
+      border-radius: 100px;
+    }
+  }
+
+  .btn-edit {
+    background-color: #ffc107;
+    color: #000;
+  }
+
+  .btn-delete {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  .btn-save {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .btn-cancel {
+    background-color: #6c757d;
+    color: white;
+  }
+}

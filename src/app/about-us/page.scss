@@ -1,0 +1,323 @@
+$primary-color: #f55f2a;
+$text-color: #333;
+$white: #fff;
+$light-bg: #f9f9f9;
+$border-color: #e0e0e0;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+// Asosiy stil
+.sappir-blog {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $white;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  .spafir-opener-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #111f3a;
+    border-bottom: 2px solid #111f3a;
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    .year {
+      font-size: 25px;
+    }
+  }
+}
+
+// Sarlavha
+.blog-header {
+  background: linear-gradient(
+    135deg,
+    $primary-color,
+    darken($primary-color, 15%)
+  );
+  color: $white;
+  min-height: 80vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+
+    background-image: url(https://images.prismic.io/element451/1379a91d-d771-4d2c-af88-1394902912a3_Student+Success.jpg?auto=format&ixlib=react-9.0.3&h=836&w=1254);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    filter: grayscale(100%) contrast(1.03) brightness(0.45);
+    transform: scale(1.02);
+    will-change: transform, filter;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+
+    /* Inline SVG data-url: feTurbulence bilan oddiy grain hosil qiladi */
+    background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'>\
+      <filter id='n'>\
+        <feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/>\
+        <feColorMatrix type='saturate' values='0'/>\
+      </filter>\
+      <rect width='100%' height='100%' filter='url(%23n)' />\
+    </svg>");
+
+    background-repeat: repeat;
+    background-size: 200px 200px; /* grain hajmini bu bilan boshqaring */
+    opacity: 1; /* noise zichligini shu bilan sozlang */
+    pointer-events: none; /* ustidagi kontentga ta'sir qilmasin */
+
+    /* Blending: qanday aralashishini xohlasangiz tanlang:
+     overlay / soft-light / multiply / screen / normal */
+    mix-blend-mode: overlay;
+  }
+
+  .container {
+    z-index: 99;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .logo {
+      img {
+        width: 120px;
+      }
+    }
+
+    .texts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .school-name {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        font-size: 50px;
+        line-height: 1.1;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+// Asosiy kontent
+.blog-main {
+  padding: 3rem 0;
+
+  section {
+    margin-bottom: 4rem;
+    margin-top: 20px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: $text-color;
+      position: relative;
+      color: #111f3a;
+      text-align: center;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: $primary-color;
+        margin: 1rem auto;
+      }
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin: 1.5rem 0 1rem;
+      color: $primary-color;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      margin: 1.2rem 0 0.8rem;
+      color: $text-color;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+// Bo'limlar
+.about-section,
+.school-section {
+  .content {
+    background: $light-bg;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid $primary-color;
+    
+    span {
+        border-bottom: 2px solid #f55f2a;
+      }
+  }
+}
+
+.why-sapfir-section {
+  .content {
+    background: $light-bg;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid $primary-color;
+    position: relative;
+    
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+
+      span {
+        border-bottom: 2px solid #f55f2a;
+      }
+    }
+    
+    .quote-box {
+      margin: 0 auto;
+      width: 500px;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: $primary-color;
+      color: $white;
+      border-radius: 8px;
+
+      span {
+        font-size: 18px;
+        display: block;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      h3 {
+        text-align: center;
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.4;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.programs-section {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .program-card {
+    background: $white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: $shadow;
+    border: 1px solid $border-color;
+    text-align: center;
+
+    h3 {
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: lighten($text-color, 20%);
+    }
+  }
+}
+
+.values-section {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .value-item {
+    text-align: center;
+    padding: 1.5rem;
+
+    h4 {
+      color: $primary-color;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .blog-header {
+    padding: 2rem 0;
+
+    .logo {
+      font-size: 2rem;
+    }
+  }
+
+  .blog-main {
+    padding: 2rem 0;
+
+    section h2 {
+      font-size: 1.7rem;
+    }
+  }
+
+  .programs-section .content,
+  .values-section .content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section .content,
+  .school-section .content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-header::after {
+    background-size: 150px 150px;
+  }
+}

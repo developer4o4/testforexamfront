@@ -1,0 +1,19 @@
+#science-tests-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+
+  .science-item {
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px #0000000a;
+    color: #000;
+    transition: all .3s;
+    
+    &:hover {
+        color: #ea641e;
+        box-shadow: 0 0 5px 5px #ea651e11;
+    }
+  }
+}

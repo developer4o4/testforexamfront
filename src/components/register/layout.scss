@@ -1,0 +1,333 @@
+.register-shape {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004f;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  z-index: -10;
+  transition: all 0.3s;
+
+  &.popped {
+    opacity: 1;
+    z-index: 99;
+  }
+}
+
+.register-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ecece4;
+  padding: 20px;
+  width: 80%;
+  height: 90vh;
+  border-radius: 30px;
+  opacity: 0;
+  z-index: -10;
+  transition: all 0.3s;
+  overflow: auto;
+  scrollbar-width: none;
+
+  &.popped {
+    opacity: 1;
+    z-index: 99;
+  }
+
+  .register-container {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    // overflow: auto;
+
+    .close {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #f8f9f4;
+      transform: rotate(45deg);
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #312f30;
+
+      img {
+        width: 140px;
+      }
+
+      span {
+        color: #00b40c;
+      }
+    }
+
+    h1 {
+      font-weight: 500;
+      margin-top: 5px;
+      span {
+        color: rgb(0 0 0 / 40%);
+      }
+    }
+
+    .register-type {
+      background-color: #f8f9f4;
+      padding: 5px;
+      width: 50%;
+      height: 50px;
+      border-radius: 13px;
+      margin-top: 15px;
+
+      .phone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .last-form {
+      width: 50%;
+
+      .last {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 20px;
+      }
+
+      .input-row {
+        width: 48%;
+      }
+    }
+
+    .form {
+      width: 50%;
+
+      &.last {
+        width: 100%;
+      }
+
+      // .code-field {
+      //   display: flex;
+      //   justify-content: center;
+      //   gap: 10px;
+
+      //   input {
+      //     width: 50px;
+      //     text-align: center;
+      //     border: 2px solid #d7d8d4;
+      //     border-radius: 15px;
+      //     height: 50px;
+      //     font-size: 16px;
+      //     font-family: "Poppins";
+      //   }
+      // }
+
+      .error-text {
+        margin-top: 5px;
+      }
+
+      // .resend-section {
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: flex-start;
+      //   margin-top: 10px;
+
+      //   button {
+      //     float: unset;
+      //     margin-top: 0;
+      //   }
+      // }
+
+      .input-row {
+        margin-top: 15px;
+        position: relative;
+        // gap: 10px;
+        display: flex;
+        // justify-content: center;
+        flex-direction: column;
+
+        input,
+        select {
+          border: 2px solid #d7d8d4;
+          border-radius: 15px;
+          width: 100%;
+          height: 50px;
+          padding: 0 10px;
+          font-size: 16px;
+          font-family: "Poppins";
+          padding-right: 40px !important;
+        }
+
+        .error-text {
+          color: red;
+          font-size: 15px;
+        }
+
+        // button[type="button"] {
+        //   position: absolute;
+        //   right: 10px;
+        //   top: 50%;
+        //   transform: translateY(-50%);
+        //   background-color: transparent;
+        //   border: none;
+        //   cursor: pointer;
+        //   width: 30px;
+        //   height: 30px;
+        //   display: flex;
+        //   align-items: center;
+        //   justify-content: center;
+        //   border-radius: 50%;
+        //   transition: all 0.2s;
+
+        //   &:hover {
+        //     background-color: #d7d8d4;
+        //   }
+
+        //   svg {
+        //     width: 20px !important;
+        //   }
+        // }
+      }
+      .toggle-action {
+        button {
+          background-color: transparent;
+          border: none;
+          font-size: 16px;
+          font-family: "Poppins";
+
+          span {
+            cursor: pointer;
+            color: #ff8a00;
+          }
+        }
+
+        margin-top: 15px;
+      }
+    }
+    button[type="submit"],
+    .n {
+      width: 100%;
+      height: 50px;
+      border-radius: 15px;
+      background-color: #ff8a00;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      font-family: "Poppins";
+      color: #fff;
+      transition: all 0.2s;
+      margin-top: 20px;
+      float: right;
+
+      &:hover {
+        background-color: #cf7208;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1424px) {
+  .register-popup {
+    .register-container {
+      .last-form {
+        display: flex;
+        flex-direction: column;
+
+        .last {
+          row-gap: 0;
+
+          .input-row {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .register-popup {
+    width: 90%;
+    padding: 15px;
+    height: 70vh;
+
+
+    .register-container {
+      overflow: auto;
+      padding: 20px 0;
+
+      h1 {
+        font-size: 22px !important;
+        text-align: center;
+      }
+
+      .register-type {
+        width: 90%;
+      }
+
+      .last-form {
+        width: 90%;
+
+        .input-row {
+          margin-top: 10px;
+        }
+
+        .n {
+          width: 100%;
+        }
+      }
+      .form {
+        width: 90%;
+
+        .input-row {
+          width: 100%;
+        }
+
+        &.last {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
+
+      .error-text {
+        margin-top: 0 !important;
+        
+        &.al {
+          margin-top: 10px !important;
+          color: red;
+          font-size: 14px;
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+      .n {
+        width: 100%;
+        
+        &.fons-sm {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

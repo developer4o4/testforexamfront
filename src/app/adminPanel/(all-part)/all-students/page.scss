@@ -1,0 +1,211 @@
+#admin-all-students {
+  padding: 20px;
+  min-height: 100vh;
+
+  .all-classes {
+    h2 {
+      color: #444;
+    }
+    .all-classes-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      button {
+        padding: 7px 15px;
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 20px;
+        border: none;
+        background-color: #f1f1f1;
+        color: #f26225;
+
+        &:hover,
+        &.active {
+          background-color: #f26225;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .class-by-classes {
+    margin-top: 10px;
+
+    h2 {
+      color: #444;
+    }
+
+    .classes-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      button {
+        padding: 7px 15px;
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 20px;
+        border: none;
+        background-color: #f1f1f1;
+        color: #f26225;
+
+        &:hover,
+        &.active {
+          background-color: #f26225;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .bulk-actions {
+    margin-top: 10px;
+    button {
+      font-size: 15px;
+      background-color: #f1f1f1;
+      border-radius: 20px;
+      padding: 7px 15px;
+      cursor: pointer;
+      color: #f26225;
+      border: none;
+
+      &:hover {
+        background-color: #f26225;
+        color: #fff;
+      }
+    }
+  }
+
+  .pupils-by-class {
+    h2 {
+      margin-top: 10px;
+      color: #444;
+    }
+    .pupils-container {
+      width: 100%;
+      margin-top: 5px;
+
+      table {
+        background-color: #f1f1f1;
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .actions {
+          display: flex;
+          align-items: center;
+          margin: 0 auto;
+          cursor: pointer;
+
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        thead {
+          tr:first-child {
+            background-color: #f9f9f9 !important;
+            
+            input[type="checkbox"] {
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            cursor: pointer;
+            height: 45px;
+            input[type="checkbox"] {
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+            }
+
+            &.active {
+              background-color: #ea641e !important;
+              color: #fff !important;
+
+              .actions {
+                svg {
+                  stroke: #fff !important;
+                }
+              }
+            }
+
+            &:nth-child(even) {
+              background-color: #f9f9f9; // yoki siz xohlagan rang
+            }
+          }
+
+          tr:hover {
+            background-color: #f2632596;
+            color: #fff;
+
+            .actions {
+              svg {
+                stroke: #fff;
+              }
+            }
+          }
+        }
+        th {
+          font-size: 15px;
+          color: #333;
+          font-weight: 400;
+        }
+
+        th,
+        td {
+          padding: 5px 10px;
+          text-align: center;
+          min-width: 50px;
+
+          button {
+            background-color: transparent;
+            border: none;
+            img {
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+
+    .pagination-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+
+      button {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          background-color: #f1f1f1;
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

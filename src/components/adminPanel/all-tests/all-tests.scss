@@ -1,0 +1,91 @@
+
+.tests-list {
+  width: 100%;
+  margin: 10px auto 20px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: sans-serif;
+
+}
+
+.test-item {
+    background-color: #fff;
+    border-radius: 10px;
+  border: 1px solid #ea641e;
+
+}
+
+.test-item + .test-item {
+  margin-top: 15px;
+}
+
+.test-title {
+  background-color: #ea641e;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  font-size: 18px;
+
+  &:hover {
+    background-color: darken(#ea641e, 10%);
+  }
+
+  &.active {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+.test-questions-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.test-questions-wrapper.open {
+  max-height: 1000px; // etarlicha katta bo'lishi kerak
+  opacity: 1;
+}
+
+.test-questions {
+  background-color: white;
+  padding: 16px;
+//   border: 1px solid #ea641e;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.question-block {
+  margin-bottom: 16px;
+
+  .question {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+
+    span {
+        color: #ea641e;
+    }
+  }
+
+  .options {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    li {
+      margin: 4px 0;
+      padding: 6px 10px;
+      background-color: #f9f9f9;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+  }
+}

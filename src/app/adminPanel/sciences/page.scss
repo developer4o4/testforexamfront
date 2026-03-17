@@ -1,0 +1,43 @@
+#sciences-page {
+    min-height: 100vh;
+    padding: 10px 30px;
+
+    .info-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f1f1f1;
+        gap: 10px;
+        padding: 0 10px;
+        border-radius: 15px;
+
+        svg {
+            fill: #f26225
+        }
+    }
+
+    .add-science-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+
+        button {
+            width: 50%;
+            background-color: #f26225;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 15px;
+            
+            &:hover {
+                background-color: #f8743c;
+            }
+
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+}
